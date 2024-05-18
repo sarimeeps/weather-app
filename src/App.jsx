@@ -15,7 +15,7 @@ function App() {
   const [dailyDesc, setDailyDesc] = useState();
 
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&units=imperial&cnt=5&exclude=hourly,minutely&appid=833110e347976d143c39463d4742e9fc`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&units=imperial&cnt=5&exclude=hourly,minutely&appid=[API_KEY]`)
       .then(response => response.json())
       .then(json => {
         setData(json);
