@@ -9,7 +9,6 @@ function App() {
 
   const [data, setData] = useState(null);
   const [temp, setTemp] = useState(0);
-  // const [timestamp, setTimestamp] = useState(null);
   const [location, setLocation] = useState("");
   const [dailyTemp, setDailyTemp] = useState();
   const [desc, setDesc] = useState();
@@ -21,12 +20,10 @@ function App() {
       .then(json => {
         setData(json);
         setTemp(json.current.temp);
-        // setTimestamp(json.current.dt);
         setLocation(json.timezone);
         setDailyTemp(json.daily.map(daily => daily.temp.day));
         setDesc(json.current.weather.map(weather => weather.main));
         setDailyDesc(json.daily.map(daily => daily.weather[0].main));
-    
         })
       .catch(error => console.error(error));
   },[]);
